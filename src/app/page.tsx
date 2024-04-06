@@ -1,24 +1,27 @@
 "use client";
 
-import * as React from "react";
-import Image from "next/image";
+import AboutMe from "@/components/AboutMe";
+import Cursor from '@/components/Cursor';
 import Header from "@/components/Header";
-import Cursor from '@/components/Cursor'
+import { useActive } from "@/hooks/useActiveStore";
+import Image from "next/image";
+import * as React from "react";
 
 
 const HeroSection: React.FC = () => {
-  const [isActive, setIsActive] = React.useState(false);
+  const { isActive, setIsActiveFalse, setIsActiveTrue } = useActive();
+
 
 
   return (
-    <section className="flex flex-col items-center px-4 md:flex-row md:justify-between md:px-8 lg:px-16 md:mt-0 mt-5">
+    <section className="flex flex-col items-center px-4 md:flex-row md:justify-between md:px-8 lg:px-16 md:-mt-5 mt-12 w-full h-screen">
       <div
         className="flex flex-col items-center text-center md:items-start md:text-left md:w-1/2"
         onMouseOver={() => {
-          setIsActive(true);
+          setIsActiveTrue();
         }}
         onMouseLeave={() => {
-          setIsActive(false);
+          setIsActiveFalse();
         }}
       >
         <h2 className="text-4xl text-center uppercase font-bold leading-tight text-gray-800 md:text-5xl lg:text-6xl">
@@ -45,6 +48,7 @@ const HomePage: React.FC = () => (
   <div className="flex flex-col items-center pb-20 bg-white">
     <Header />
     <HeroSection />
+    <AboutMe/>
   </div>
 );
 

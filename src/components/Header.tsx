@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 interface NavLinkProps {
@@ -12,8 +11,6 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
 
   return (
     <Link
@@ -36,9 +33,9 @@ const Header: React.FC = () => {
         </Link>
         <nav className="hidden justify-between items-center md:flex space-x-10">
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/projects">Projects</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink href="#about">About</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </nav>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -54,9 +51,9 @@ const Header: React.FC = () => {
               thequantumcoder
             </Link>
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/projects">Projects</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
           </SheetContent>
         </Sheet>
       </div>
