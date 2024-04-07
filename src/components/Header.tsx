@@ -28,9 +28,10 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 flex flex-col items-center pt-4 bg-white w-full">
       <div className="flex gap-5 px-5 w-full text-black whitespace-nowrap max-w-7xl">
-        <Link href="/" className="flex-auto sm:text-2xl font-bold text-xl hover:opacity-90 transition text-black/85">
+        <Link href="/" className="sm:text-2xl font-bold text-xl hover:opacity-90 transition text-black/85">
           thequantumcoder
         </Link>
+        <div className="flex-1"/>
         <nav className="hidden justify-between items-center md:flex space-x-10">
           <NavLink href="/">Home</NavLink>
           <NavLink href="#about">About</NavLink>

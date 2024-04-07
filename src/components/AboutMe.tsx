@@ -3,9 +3,11 @@
 import { useActive } from "@/hooks/useActiveStore";
 import Image from "next/image";
 import * as React from "react";
+import Card from '@/components/Card'
+import CardMobile from '@/components/CardMobile'
 
 const AboutMe: React.FC = () => {
-  const { isActive, setIsActiveFalse, setIsActiveTrue } = useActive();
+  const { setIsActiveFalse, setIsActiveTrue } = useActive();
   return (
     <section
       className="flex justify-center items-center md:px-16 px-7 lg:pb-10 md:pb-20 pb-16 bg-violet-300 w-full min-h-screen h-full"
@@ -48,6 +50,7 @@ const AboutMe: React.FC = () => {
             <Image src="me.svg" alt="Tejus S" width={316} height={562} />
           </div>
         </div>
+        <Card />
       </div>
 
       {/* for small devices */}
@@ -70,6 +73,7 @@ const AboutMe: React.FC = () => {
               </p>
             </div>
           </div>
+          <CardMobile />
         </div>
       </div>
     </section>
