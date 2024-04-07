@@ -1,59 +1,132 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const frontend_tools = [
-  { imageSrc: "frontend/next.svg", toolName: "Next" },
-  { imageSrc: "frontend/react.svg", toolName: "React" },
-  { imageSrc: "frontend/redux.svg", toolName: "Redux" },
-  { imageSrc: "frontend/zustand.svg", toolName: "Zustand" },
-  { imageSrc: "frontend/tailwind.svg", toolName: "Tailwind" },
-  { imageSrc: "frontend/shadcn.svg", toolName: "Shadcn" },
-  { imageSrc: "frontend/figma.svg", toolName: "Figma" },
-  { imageSrc: "frontend/builder.io.svg", toolName: "Builder.io" },
-];
-
-const other_tools = [
-  { imageSrc: "others/github.svg", toolName: "Github" },
-  { imageSrc: "others/vs-code.svg", toolName: "VS Code" },
-  { imageSrc: "others/openai.svg", toolName: "OpenAI" },
-  { imageSrc: "others/stripe.svg", toolName: "Stripe" },
-];
-
-const languages = [
-  { imageSrc: "others/ts.svg", toolName: "TypeScript" },
-  { imageSrc: "others/js.svg", toolName: "JavaScript" },
+  {
+    imageSrc: "frontend/next.svg",
+    toolName: "Next",
+    link: "https://nextjs.org/",
+  },
+  {
+    imageSrc: "frontend/react.svg",
+    toolName: "React",
+    link: "https://reactjs.org/",
+  },
+  {
+    imageSrc: "frontend/redux.svg",
+    toolName: "Redux",
+    link: "https://redux.js.org/",
+  },
+  {
+    imageSrc: "frontend/zustand.svg",
+    toolName: "Zustand",
+    link: "https://zustand-demo.pmnd.rs/",
+  },
+  {
+    imageSrc: "frontend/tailwind.svg",
+    toolName: "Tailwind",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    imageSrc: "frontend/shadcn.svg",
+    toolName: "Shadcn",
+    link: "https://ui.shadcn.com/",
+  },
+  {
+    imageSrc: "frontend/figma.svg",
+    toolName: "Figma",
+    link: "https://www.figma.com/",
+  },
+  {
+    imageSrc: "frontend/builder.io.svg",
+    toolName: "Builder.io",
+    link: "https://www.builder.io/",
+  },
 ];
 
 const backend_tools = [
-  { imageSrc: "backend/express.svg", toolName: "Express" },
-  { imageSrc: "backend/trpc.svg", toolName: "tRPC" },
-  { imageSrc: "backend/prisma.svg", toolName: "Prisma" },
-  { imageSrc: "backend/pusher.svg", toolName: "Pusher" },
+  {
+    imageSrc: "backend/express.svg",
+    toolName: "Express",
+    link: "https://expressjs.com/",
+  },
+  { imageSrc: "backend/trpc.svg", toolName: "tRPC", link: "https://trpc.io/" },
+  {
+    imageSrc: "backend/prisma.svg",
+    toolName: "Prisma",
+    link: "https://www.prisma.io/",
+  },
+  {
+    imageSrc: "backend/pusher.svg",
+    toolName: "Pusher",
+    link: "https://pusher.com/",
+  },
   {
     imageSrc: "backend/cockroachlabs.svg",
     toolName: (
-      <div className="text-center inline-block">
+      <span className="text-center inline-block">
         Cockroach
         <br />
         Labs
-      </div>
+      </span>
     ),
+    link: "https://www.cockroachlabs.com/",
   },
   {
     imageSrc: "backend/postgresql.svg",
-    toolName: (
-      <div className="text-center inline-block">
-        Postgre
-        <br />
-        SQL
-      </div>
-    ),
+    toolName: "PostgreSQL",
+    link: "https://www.postgresql.org/",
   },
-  { imageSrc: "backend/mongodb.svg", toolName: "MongoDB" },
-  { imageSrc: "backend/redis.svg", toolName: "Redis" },
+  {
+    imageSrc: "backend/mongodb.svg",
+    toolName: "MongoDB",
+    link: "https://www.mongodb.com/",
+  },
+  {
+    imageSrc: "backend/redis.svg",
+    toolName: "Redis",
+    link: "https://redis.io/",
+  },
 ];
 
-const MyComponent: React.FC = () => {
+const other_tools = [
+  {
+    imageSrc: "others/github.svg",
+    toolName: "Github",
+    link: "https://github.com/",
+  },
+  {
+    imageSrc: "others/vs-code.svg",
+    toolName: "VS Code",
+    link: "https://code.visualstudio.com/",
+  },
+  {
+    imageSrc: "others/openai.svg",
+    toolName: "OpenAI",
+    link: "https://openai.com/",
+  },
+  {
+    imageSrc: "others/stripe.svg",
+    toolName: "Stripe",
+    link: "https://stripe.com/",
+  },
+];
+
+const languages = [
+  {
+    imageSrc: "others/ts.svg",
+    toolName: "TypeScript",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    imageSrc: "others/js.svg",
+    toolName: "JavaScript",
+    link: "https://www.javascript.com/",
+  },
+];
+
+const CardMobile: React.FC = () => {
   return (
     <div>
       <div className="flex justify-between flex-wrap gap-y-32 mt-32">
@@ -69,92 +142,116 @@ const MyComponent: React.FC = () => {
               if (tool.toolName === "Zustand") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={69.5}
-                      height={40}
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={69.5}
+                        height={40}
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
               if (tool.toolName === "Tailwind") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={65.6}
-                      height={40}
-                      className="h-[40px]"
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={65.6}
+                        height={40}
+                        className="h-[40px]"
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
               if (tool.toolName === "Figma") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={26.3}
-                      height={40}
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={26.3}
+                        height={40}
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
               if (tool.toolName === "Builder.io") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={54.11}
-                      height={40}
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={54.11}
+                        height={40}
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
               if (tool.toolName === "Shadcn") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={40}
-                      height={40}
-                      className="h-[40px]"
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={40}
+                        height={40}
+                        className="h-[40px]"
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
 
               return (
                 <div className="flex flex-col items-center h-[170px] w-[170px]">
-                  <Image
-                    src={tool.imageSrc}
-                    alt={`${tool.toolName} logo`}
-                    width={40}
-                    height={40}
-                  />
-                  <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                    {tool.toolName}
-                  </div>
+                  <Link href={tool.link} target="_blank">
+                    <Image
+                      src={tool.imageSrc}
+                      alt={`${tool.toolName} logo`}
+                      width={40}
+                      height={40}
+                    />
+                  </Link>
+                  <Link href={tool.link} target="_blank">
+                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                      {tool.toolName}
+                    </div>
+                  </Link>
                 </div>
               );
             })}
@@ -173,46 +270,38 @@ const MyComponent: React.FC = () => {
               if (tool.toolName === "tRPC") {
                 return (
                   <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={33.58}
-                      height={40}
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
-                  </div>
-                );
-              }
-              if (tool.toolName === "Shadcn") {
-                return (
-                  <div className="flex flex-col items-center h-[170px] w-[170px]">
-                    <Image
-                      src={tool.imageSrc}
-                      alt={`${tool.toolName} logo`}
-                      width={40}
-                      height={40}
-                      className="h-[40px]"
-                    />
-                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                      {tool.toolName}
-                    </div>
+                    <Link href={tool.link} target="_blank">
+                      <Image
+                        src={tool.imageSrc}
+                        alt={`${tool.toolName} logo`}
+                        width={33.58}
+                        height={40}
+                      />
+                    </Link>
+                    <Link href={tool.link} target="_blank">
+                      <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                        {tool.toolName}
+                      </div>
+                    </Link>
                   </div>
                 );
               }
 
               return (
                 <div className="flex flex-col items-center h-[170px] w-[170px]">
-                  <Image
-                    src={tool.imageSrc}
-                    alt={`${tool.toolName} logo`}
-                    width={40}
-                    height={40}
-                  />
-                  <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                    {tool.toolName}
-                  </div>
+                  <Link href={tool.link} target="_blank">
+                    <Image
+                      src={tool.imageSrc}
+                      alt={`${tool.toolName} logo`}
+                      width={40}
+                      height={40}
+                    />
+                  </Link>
+                  <Link href={tool.link} target="_blank">
+                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                      {tool.toolName}
+                    </div>
+                  </Link>
                 </div>
               );
             })}
@@ -231,15 +320,19 @@ const MyComponent: React.FC = () => {
             {other_tools.map((tool) => {
               return (
                 <div className="flex flex-col items-center h-[170px] w-[170px]">
-                  <Image
-                    src={tool.imageSrc}
-                    alt={`${tool.toolName} logo`}
-                    width={40}
-                    height={40}
-                  />
-                  <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                    {tool.toolName}
-                  </div>
+                  <Link href={tool.link} target="_blank">
+                    <Image
+                      src={tool.imageSrc}
+                      alt={`${tool.toolName} logo`}
+                      width={40}
+                      height={40}
+                    />
+                  </Link>
+                  <Link href={tool.link} target="_blank">
+                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                      {tool.toolName}
+                    </div>
+                  </Link>
                 </div>
               );
             })}
@@ -252,15 +345,19 @@ const MyComponent: React.FC = () => {
             {languages.map((tool) => {
               return (
                 <div className="flex flex-col items-center h-[170px] w-[170px] pl-14">
-                  <Image
-                    src={tool.imageSrc}
-                    alt={`${tool.toolName} logo`}
-                    width={40}
-                    height={40}
-                  />
-                  <div className="mt-10 text-xs sm:text-sm md:text-lg">
-                    {tool.toolName}
-                  </div>
+                  <Link href={tool.link} target="_blank">
+                    <Image
+                      src={tool.imageSrc}
+                      alt={`${tool.toolName} logo`}
+                      width={40}
+                      height={40}
+                    />
+                  </Link>
+                  <Link href={tool.link} target="_blank">
+                    <div className="mt-10 text-xs sm:text-sm md:text-lg">
+                      {tool.toolName}
+                    </div>
+                  </Link>
                 </div>
               );
             })}
@@ -271,4 +368,4 @@ const MyComponent: React.FC = () => {
   );
 };
 
-export default MyComponent;
+export default CardMobile;
