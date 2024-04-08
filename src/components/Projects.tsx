@@ -41,7 +41,7 @@ const projects = [
   },
   {
     title: "Issue Tracker",
-    description: "Chat With Friends In Real-Time",
+    description: "A Web App To Track Issues",
     content:
       "Issue Tracker is a web app built with Next.js for managing tasks. Users can add, edit, delete, and assign issues, keeping everything organized. Powerful filtering and sorting help find the information you need fast. Login unlocks full features, while guests can still browse existing issues.",
     images: ["/issue_tracker1.jpg", "/issue_tracker2.jpg", "/issue_tracker3.jpg"],
@@ -59,7 +59,7 @@ const Projects = () => {
       id="about"
     >
       <h1
-        className="text-5xl font-semibold max-md:max-w-full max-md:text-3xl my-20"
+        className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold max-md:max-w-full my-20 text-center"
         onMouseOver={() => {
           setIsActiveTrue();
         }}
@@ -74,7 +74,7 @@ const Projects = () => {
           <Card className="bg-[#EACFEA] text-center" key={project.title}>
             <CardHeader>
               <CardTitle
-                className="text-3xl"
+                className="lg:text-3xl md:text-2xl sm:text-xl text-lg"
                 onMouseOver={() => {
                   setIsActiveTrue();
                 }}
@@ -85,7 +85,7 @@ const Projects = () => {
                 {project.title}
               </CardTitle>
               <CardDescription
-                className="text-2xl"
+                className="lg:text-2xl md:text-xl sm:text-lg text-[15px]"
                 onMouseOver={() => {
                   setIsActiveTrue();
                 }}
@@ -127,9 +127,9 @@ const Projects = () => {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
-              <div className="flex justify-around">
+              <div className="flex justify-center items-center flex-col">
                 <p
-                  className="text-xl my-5 w-full max-w-[60%] text-left"
+                  className="lg:text-xl md:text-lg sm:text-[15px] text-sm my-5 w-full text-center md:max-w-[80%]"
                   onMouseOver={() => {
                     setIsActiveTrue();
                   }}
@@ -139,24 +139,25 @@ const Projects = () => {
                 >
                   {project.content}
                 </p>
-                <div className="h-50 border-r border-black/20" />
-                <div className="flex flex-col justify-evenly text-xl">
+                <div className="flex flex-col justify-evenly lg:text-xl md:text-lg sm:text-[15px] text-sm gap-5">
                   <Link
+                    target='_blank'
                     className="flex gap-5 group items-center"
                     href={project.live}
                   >
                     <ExternalLink className="h-5 w-5" />
-                    <span className="text-indigo-600 group-hover:underline transition">
-                      {project.live}
+                    <span className="text-indigo-600 group-hover:underline transition font-medium">
+                      Live
                     </span>
                   </Link>
                   <Link
+                    target='_blank'
                     className="flex gap-5 group items-center"
                     href={project.code}
                   >
                     <Code className="h-5 w-5" />
-                    <span className="text-indigo-600 group-hover:underline transition">
-                      {project.code}
+                    <span className="text-indigo-600 group-hover:underline transition font-medium">
+                      Code
                     </span>
                   </Link>
                 </div>
