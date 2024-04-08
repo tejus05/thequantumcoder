@@ -19,6 +19,7 @@ import {
 import Image from 'next/image';
 import { Code, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import DialogImage from './DialogImage';
 
 const projects = [
   {
@@ -56,7 +57,7 @@ const Projects = () => {
   return (
     <section
       className="flex flex-col justify-center items-center md:px-16 px-7 lg:pb-10 md:pb-20 pb-16 bg-[#E6B1E1] w-full min-h-screen h-full"
-      id="about"
+      id="projects"
     >
       <h1
         className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold max-md:max-w-full my-20 text-center"
@@ -100,28 +101,46 @@ const Projects = () => {
               <Carousel className="w-full max-w-[80%]">
                 <CarouselContent>
                   <CarouselItem>
-                    <Image
-                      src={project.images[0]}
-                      alt="Quill 1"
-                      width={1365}
-                      height={625}
-                    />
+                    <div className="relative">
+                      <Image
+                        src={project.images[0]}
+                        alt="Quill 1"
+                        width={1365}
+                        height={625}
+                      />
+                      <DialogImage
+                        imageSrc={project.images[0]}
+                        title={project.title}
+                      />
+                    </div>
                   </CarouselItem>
                   <CarouselItem>
-                    <Image
-                      src={project.images[1]}
-                      alt="Quill 2"
-                      width={1365}
-                      height={625}
-                    />
+                    <div className="relative">
+                      <Image
+                        src={project.images[1]}
+                        alt="Quill 1"
+                        width={1365}
+                        height={625}
+                      />
+                      <DialogImage
+                        imageSrc={project.images[1]}
+                        title={project.title}
+                      />
+                    </div>
                   </CarouselItem>
                   <CarouselItem>
-                    <Image
-                      src={project.images[2]}
-                      alt="Quill 3"
-                      width={1365}
-                      height={625}
-                    />
+                    <div className="relative">
+                      <Image
+                        src={project.images[2]}
+                        alt="Quill 1"
+                        width={1365}
+                        height={625}
+                      />
+                      <DialogImage
+                        imageSrc={project.images[2]}
+                        title={project.title}
+                      />
+                    </div>
                   </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious />
@@ -141,7 +160,7 @@ const Projects = () => {
                 </p>
                 <div className="flex flex-col justify-evenly lg:text-xl md:text-lg sm:text-[15px] text-sm gap-5">
                   <Link
-                    target='_blank'
+                    target="_blank"
                     className="flex gap-5 group items-center"
                     href={project.live}
                   >
@@ -151,7 +170,7 @@ const Projects = () => {
                     </span>
                   </Link>
                   <Link
-                    target='_blank'
+                    target="_blank"
                     className="flex gap-5 group items-center"
                     href={project.code}
                   >
