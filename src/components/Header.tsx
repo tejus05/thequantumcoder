@@ -2,20 +2,24 @@
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import React from "react";
 
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
+  onClick?(): void;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, children, onClick }) => {
 
   return (
     <Link
-      href={href}
-      className={`md:text-[15px] hover:text-white hover:bg-indigo-600 px-3 py-2 hover:rounded-full transition-all duration-0 text-[#222222] text-xs font-medium`}
+      to={href}
+      smooth
+      duration={500}
+      className={`md:text-[15px] hover:text-white hover:bg-indigo-600 px-3 py-2 hover:rounded-full transition-all duration-0 text-[#222222] text-xs font-medium cursor-pointer`}
+      onClick={onClick}
     >
       {children}
     </Link>
@@ -28,15 +32,20 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 flex flex-col items-center pt-4 bg-white w-full">
       <div className="flex gap-5 px-5 w-full text-black whitespace-nowrap max-w-7xl">
-        <Link href="/" className="sm:text-2xl font-bold text-xl hover:opacity-90 transition text-black/85">
+        <Link
+          to="home"
+          className="sm:text-2xl font-bold text-xl hover:opacity-90 transition text-black/85 cursor-pointer"
+          smooth
+          duration={500}
+        >
           thequantumcoder
         </Link>
-        <div className="flex-1"/>
+        <div className="flex-1" />
         <nav className="hidden justify-between items-center md:flex space-x-10">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="home">Home</NavLink>
+          <NavLink href="about">About</NavLink>
+          <NavLink href="projects">Projects</NavLink>
+          <NavLink href="contact">Contact</NavLink>
         </nav>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -48,13 +57,13 @@ const Header: React.FC = () => {
             </button>
           </SheetTrigger>
           <SheetContent side="top" className="flex flex-col gap-4 p-4">
-            <Link href="/" className="text-xl  font-bold">
+            <Link to="/" className="text-xl  font-bold">
               thequantumcoder
             </Link>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#projects">Projects</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink onClick={()=>setIsOpen(false)} href="home">Home</NavLink>
+            <NavLink onClick={()=>setIsOpen(false)} href="about">About</NavLink>
+            <NavLink onClick={()=>setIsOpen(false)} href="projects">Projects</NavLink>
+            <NavLink onClick={()=>setIsOpen(false)} href="contact">Contact</NavLink>
           </SheetContent>
         </Sheet>
       </div>

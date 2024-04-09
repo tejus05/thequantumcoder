@@ -1,58 +1,69 @@
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import React from "react";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer className="w-full bg-black text-white p-8 relative bottom-0 flex justify-center items-center flex-col gap-10 text-center">
-      <Link
-        href="/"
+      <ScrollLink
+        to="home"
+        smooth
+        duration={500}
         className={cn(
           buttonVariants({ variant: "link" }),
-          "text-white text-2xl italic"
+          "text-white cursor-pointer text-2xl italic"
         )}
       >
         thequantumcoder
-      </Link>
+      </ScrollLink>
       <div className="flex justify-center sm:gap-10 gap-3 text-center items-center w-full max-w-[30%] sm:flex-row flex-col">
-        <Link
+        <ScrollLink
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-white text-lg"
+            "text-white cursor-pointer text-lg"
           )}
-          href="/"
+          to="home"
+          smooth
+          duration={500}
         >
           Home
-        </Link>
-        <Link
+        </ScrollLink>
+        <ScrollLink
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-white text-lg"
+            "text-white cursor-pointer text-lg"
           )}
-          href="#about"
+          to="about"
+          smooth
+          duration={500}
         >
           About
-        </Link>
-        <Link
+        </ScrollLink>
+        <ScrollLink
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-white text-lg"
+            "text-white cursor-pointer text-lg"
           )}
-          href="#projects"
+          to="projects"
+          smooth
+          duration={500}
         >
           Projects
-        </Link>
-        <Link
+        </ScrollLink>
+        <ScrollLink
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-white text-lg"
+            "text-white cursor-pointer text-lg"
           )}
-          href="#contact"
+          to="contact"
+          smooth
+          duration={500}
         >
           Contact
-        </Link>
+        </ScrollLink>
       </div>
       <div className="flex justify-center md:gap-10 items-center w-full max-w-[30%] gap-3">
         <Link

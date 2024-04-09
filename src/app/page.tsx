@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
 
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 md:flex-row md:justify-between md:px-8 lg:px-16 md:-mt-12 -mt-16 w-full h-screen">
+    <section className="flex flex-col items-center justify-center px-4 md:flex-row md:justify-between md:px-8 lg:px-16 md:-mt-12 -mt-16 w-full h-screen" id="home">
       <div
         className="flex flex-col items-center text-center md:items-start md:text-left md:w-1/2"
         onMouseOver={() => {
