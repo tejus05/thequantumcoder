@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
     >
       <div className="mt-24 w-full max-w-[1319px] max-md:mt-10 max-md:max-w-full flex flex-col items-center md:block">
         <div
-          className="text-3xl lg:text-4xl font-semibold inline"
+          className="lg:text-5xl md:text-4xl text-3xl font-semibold inline"
           onMouseOver={() => {
             setIsActiveTrue();
           }}

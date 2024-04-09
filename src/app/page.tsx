@@ -1,7 +1,9 @@
 "use client";
 
 import AboutMe from "@/components/AboutMe";
+import Contact from "@/components/Contact";
 import Cursor from '@/components/Cursor';
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import { useActive } from "@/hooks/useActiveStore";
@@ -51,6 +53,8 @@ const HomePage: React.FC = () => (
     <HeroSection />
     <AboutMe/>
     <Projects/>
+    <Contact />
+    <Footer/>
   </div>
 );
 

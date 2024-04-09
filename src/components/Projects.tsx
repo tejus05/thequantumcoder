@@ -60,7 +60,7 @@ const Projects = () => {
       id="projects"
     >
       <h1
-        className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold max-md:max-w-full my-20 text-center"
+        className="lg:text-5xl md:text-4xl text-3xl font-semibold max-md:max-w-full my-20 text-center"
         onMouseOver={() => {
           setIsActiveTrue();
         }}
