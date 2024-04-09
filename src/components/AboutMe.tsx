@@ -38,11 +38,12 @@ const AboutMe: React.FC = () => {
                   setIsActiveFalse();
                 }}
               >
-                I'm <span className="font-medium">Tejus S</span>, a 20-year-old
-                computer science student and full-stack developer from India.
-                I'm passionate about crafting user-friendly web apps, from
-                concept all the way to deployment. I'm constantly learning and
-                experimenting with new technologies to stay ahead of the curve.
+                I&apos;m <span className="font-medium">Tejus S</span>, a
+                20-year-old computer science student and full-stack developer
+                from India. I&apos;m passionate about crafting user-friendly web
+                apps, from concept all the way to deployment. I&apos;m
+                constantly learning and experimenting with new technologies to
+                stay ahead of the curve.
               </div>
             </div>
           </div>
