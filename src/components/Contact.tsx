@@ -12,6 +12,8 @@ import { Button } from "./ui/button";
 import { Check, Copy, Rocket } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { useState } from "react";
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 const Contact = () => {
   const { setIsActiveFalse, setIsActiveTrue } = useActive();
@@ -35,11 +37,28 @@ const Contact = () => {
   type TFormSchema = z.infer<typeof formSchema>;
 
   const form = useForm<TFormSchema>({
-    resolver: zodResolver(formSchema)
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    }
   });
 
-  const onSubmit = async () => {
-    
+  const onSubmit = async (values: TFormSchema) => {
+    try {
+      const validatedValues = formSchema.safeParse(values);
+      if (!validatedValues.success) {
+        return toast.error("Please enter valid data. ");
+      }
+      const response = await axios.post("/api/contact", validatedValues.data);
+      form.setValue("name", "");
+      form.setValue("email", "");
+      form.setValue("message", "");
+      toast.success("Thank you for reaching out! We'll get back to you shortly. ");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again. ");
+    }
   }
 
   return (
@@ -68,7 +87,7 @@ const Contact = () => {
             setIsActiveFalse();
           }}
         >
-          Leave your message here and we'll get back to you shortly
+          Leave your message here and we&apos;ll get back to you shortly
         </p>
       </div>
       <Form {...form}>
@@ -85,6 +104,7 @@ const Contact = () => {
                 <FormControl>
                   <Input
                     {...field}
+                    disabled={form.formState.isSubmitting}
                     placeholder="Enter your name"
                     className="h-12 text-lg rounded-xl bg-[#E2FFD8]"
                   />
@@ -106,6 +126,7 @@ const Contact = () => {
                 <FormControl>
                   <Input
                     {...field}
+                    disabled={form.formState.isSubmitting}
                     placeholder="Enter your email"
                     className="h-12 text-lg rounded-xl bg-[#E2FFD8]"
                   />
@@ -127,6 +148,7 @@ const Contact = () => {
                 <FormControl>
                   <Textarea
                     {...field}
+                    disabled={form.formState.isSubmitting}
                     placeholder="Enter your message"
                     rows={4}
                     className="text-lg rounded-xl bg-[#E2FFD8]"
@@ -145,6 +167,7 @@ const Contact = () => {
               className="bg-[#38DB00] rounded-lg text-[17px] px-5 py-6 hover:bg-[#33C700]"
               type="submit"
               variant="default"
+              disabled={form.formState.isSubmitting}
             >
               Hit Me Up
               <Rocket className="ml-2" />
