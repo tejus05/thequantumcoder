@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
 };
 
 const HomePage: React.FC = () => (
-  <div className="flex flex-col items-center pb-20 bg-white">
+  <div className="flex flex-col items-center bg-white">
     <Header />
     <HeroSection />
     <AboutMe/>
