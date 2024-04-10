@@ -45,6 +45,16 @@ const AboutMe: React.FC = () => {
                 constantly learning and experimenting with new technologies to
                 stay ahead of the curve.
               </div>
+              <p className="mt-7 md:text-xl lg:text-2xl text-lg text-center md:text-left leading-[35px] md:leading-[40px] lg:leading-[60px] lg:mt-5 sm:px-6 px-1 md:px-0">
+                Do take a look at my {""}
+                <a
+                  className="hover:underline transition cursor-pointer text-indigo-600"
+                  target="_blank"
+                  href="https://drive.google.com/file/d/1uqDKDo13LjTGBvnnDZroCUS05eMo5e5U/view?usp=sharing"
+                >
+                  resume
+                </a>.
+              </p>
             </div>
           </div>
         </div>
