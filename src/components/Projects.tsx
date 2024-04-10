@@ -36,7 +36,11 @@ const projects = [
     description: "The Community App",
     content:
       "A Discord clone built using Next.js and various libraries. Users can join servers, chat in text and voice channels, and participate in video calls. Admins can manage servers, channels, and user roles. Similar to Discord, it offers real-time communication features for online communities.",
-    images: ["/quill1.jpg", "/quill2.jpg", "/quill3.jpg"],
+    images: [
+      "/discord_clone1.jpg",
+      "/discord_clone2.jpg",
+      "/discord_clone3.jpg",
+    ],
     live: "https://discord-clone-chat-app.vercel.app",
     code: "https://github.com/tejus05/discord-clone",
   },
@@ -45,7 +49,11 @@ const projects = [
     description: "A Web App To Track Issues",
     content:
       "Issue Tracker is a web app built with Next.js for managing tasks. Users can add, edit, delete, and assign issues, keeping everything organized. Powerful filtering and sorting help find the information you need fast. Login unlocks full features, while guests can still browse existing issues.",
-    images: ["/issue_tracker1.jpg", "/issue_tracker2.jpg", "/issue_tracker3.jpg"],
+    images: [
+      "/issue_tracker1.jpg",
+      "/issue_tracker2.jpg",
+      "/issue_tracker3.jpg",
+    ],
     live: "https://issue-tracker-puce.vercel.app",
     code: "https://github.com/tejus05/issue-tracker",
   },

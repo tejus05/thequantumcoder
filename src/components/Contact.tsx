@@ -52,9 +52,7 @@ const Contact = () => {
         return toast.error("Please enter valid data. ");
       }
       const response = await axios.post("/api/contact", validatedValues.data);
-      form.setValue("name", "");
-      form.setValue("email", "");
-      form.setValue("message", "");
+      form.reset();
       toast.success("Thank you for reaching out! We'll get back to you shortly. ");
     } catch (error) {
       toast.error("Something went wrong. Please try again. ");
