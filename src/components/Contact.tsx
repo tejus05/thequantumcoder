@@ -1,22 +1,20 @@
 "use client";
 
-import { useActive } from "@/hooks/useActiveStore";
-import { useForm } from "react-hook-form";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormDescription, FormMessage } from "@/components/ui/form";
-import { Input } from "./ui/input";
-import { z } from 'zod';
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { zodResolver } from '@hookform/resolvers/zod';
+import axios from 'axios';
+import { Check, Copy, Rocket } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from 'react-hot-toast';
+import { z } from 'zod';
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import { Check, Copy, Rocket } from "lucide-react";
-import { Badge } from "./ui/badge";
-import { useState } from "react";
-import axios from 'axios';
-import { toast } from 'react-hot-toast';
 
 const Contact = () => {
-  const { setIsActiveFalse, setIsActiveTrue } = useActive();
 
   const [copied, setCopied] = useState(false);
   const onCopy = () => {
@@ -67,23 +65,11 @@ const Contact = () => {
       <div className="flex flex-col gap-5 py-20 lg:text-left text-center lg:pr-10">
         <h1
           className="lg:text-5xl md:text-4xl text-3xl font-semibold lg:text-left text-center"
-          onMouseOver={() => {
-            setIsActiveTrue();
-          }}
-          onMouseLeave={() => {
-            setIsActiveFalse();
-          }}
         >
           Get In Touch
         </h1>
         <p
           className="lg:text-2xl md:text-xl text-lg text-muted-foreground font-normal mt-0 xl:mt-4 lg:text-left text-center"
-          onMouseOver={() => {
-            setIsActiveTrue();
-          }}
-          onMouseLeave={() => {
-            setIsActiveFalse();
-          }}
         >
           Leave your message here and we&apos;ll get back to you shortly
         </p>

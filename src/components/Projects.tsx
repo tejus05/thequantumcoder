@@ -1,7 +1,5 @@
 "use client";
 
-import { useActive } from '@/hooks/useActiveStore';
-import React from 'react'
 import {
   Card,
   CardContent,
@@ -16,8 +14,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from 'next/image';
 import { Code, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import DialogImage from './DialogImage';
 
@@ -61,7 +59,6 @@ const projects = [
 
 
 const Projects = () => {
-  const { setIsActiveFalse, setIsActiveTrue } = useActive();
   return (
     <section
       className="flex flex-col justify-center items-center md:px-16 px-7 lg:pb-10 md:pb-20 pb-16 bg-[#E6B1E1] w-full min-h-screen h-full"
@@ -69,12 +66,6 @@ const Projects = () => {
     >
       <h1
         className="lg:text-5xl md:text-4xl text-3xl font-semibold max-md:max-w-full my-20 text-center"
-        onMouseOver={() => {
-          setIsActiveTrue();
-        }}
-        onMouseLeave={() => {
-          setIsActiveFalse();
-        }}
       >
         Projects
       </h1>
@@ -84,23 +75,11 @@ const Projects = () => {
             <CardHeader>
               <CardTitle
                 className="lg:text-3xl md:text-2xl sm:text-xl text-lg"
-                onMouseOver={() => {
-                  setIsActiveTrue();
-                }}
-                onMouseLeave={() => {
-                  setIsActiveFalse();
-                }}
               >
                 {project.title}
               </CardTitle>
               <CardDescription
                 className="lg:text-2xl md:text-xl sm:text-lg text-[15px]"
-                onMouseOver={() => {
-                  setIsActiveTrue();
-                }}
-                onMouseLeave={() => {
-                  setIsActiveFalse();
-                }}
               >
                 {project.description}
               </CardDescription>
@@ -157,12 +136,6 @@ const Projects = () => {
               <div className="flex justify-center items-center flex-col">
                 <p
                   className="lg:text-xl md:text-lg sm:text-[15px] text-sm my-5 w-full text-center md:max-w-[80%]"
-                  onMouseOver={() => {
-                    setIsActiveTrue();
-                  }}
-                  onMouseLeave={() => {
-                    setIsActiveFalse();
-                  }}
                 >
                   {project.content}
                 </p>
