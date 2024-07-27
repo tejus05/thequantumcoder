@@ -38,7 +38,7 @@ const AboutMe: React.FC = () => {
                 <a
                   className="hover:underline transition cursor-pointer text-indigo-600"
                   target="_blank"
-                  href="https://drive.google.com/file/d/1uqDKDo13LjTGBvnnDZroCUS05eMo5e5U/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1zg8i6lKfRjX4VPC25aOR_4dVoeewNLrc/view?usp=sharing"
                 >
                   resume
                 </a>
