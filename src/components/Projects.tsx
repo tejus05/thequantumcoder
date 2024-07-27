@@ -26,7 +26,7 @@ const projects = [
     content:
       "Quill is a powerful SaaS application that allows users to upload PDF documents, engage in real-time chat with PDFs and ask questions right away, and upgrade to a Pro plan for exclusive benefits.",
     images: ["/quill1.jpg", "/quill2.jpg", "/quill3.jpg"],
-    live: "https://quill-six-mocha.vercel.app",
+    live: "https://quill-saas-app.vercel.app/",
     code: "https://github.com/tejus05/quill",
   },
   {
@@ -52,7 +52,7 @@ const projects = [
       "/issue_tracker2.jpg",
       "/issue_tracker3.jpg",
     ],
-    live: "https://issue-tracker-puce.vercel.app",
+    live: "issue-tracker-website.vercel.app",
     code: "https://github.com/tejus05/issue-tracker",
   },
 ];
