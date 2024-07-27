@@ -17,7 +17,7 @@ const Footer = () => {
           "text-white cursor-pointer text-2xl italic"
         )}
       >
-        thequantumcoder
+        Tejus S
       </ScrollLink>
       <div className="flex justify-center sm:gap-10 gap-3 text-center items-center w-full max-w-[30%] sm:flex-row flex-col">
         <ScrollLink
@@ -72,7 +72,7 @@ const Footer = () => {
             "text-white text-2xl"
           )}
           target="_blank"
-          href="https://twitter.com/thequantumcoder"
+          href="https://x.com/heytejus"
         >
           <Twitter className="sm:h-8 sm:w-8 h-6 w-6" />
         </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
             "text-white text-2xl"
           )}
           target="_blank"
-          href="https://www.linkedin.com/in/thequantumcoder/"
+          href="https://www.linkedin.com/in/heytejus/"
         >
           <Linkedin className="sm:h-8 sm:w-8 h-6 w-6" />
         </Link>
@@ -102,7 +102,7 @@ const Footer = () => {
             "text-white text-2xl"
           )}
           target="_blank"
-          href="mailto:thequantumcoder@gmail.com"
+          href="mailto:heytejus@gmail.com"
         >
           <Mail className="sm:h-8 sm:w-8 h-6 w-6" />
         </Link>

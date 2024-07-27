@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
     const mailData = {
       from: process.env.EMAIL_USER, 
-      to: "thequantumcoder@gmail.com",
+      to: "heytejus@gmail.com",
       subject: `Portfolio Contact Form Submission from ${validatedValues.data.name}`,
       text: `Name: ${validatedValues.data.name}\nEmail: ${validatedValues.data.email}\nMessage: ${validatedValues.data.message}`,
     };

@@ -18,7 +18,7 @@ const Contact = () => {
 
   const [copied, setCopied] = useState(false);
   const onCopy = () => {
-    navigator.clipboard.writeText("thequantumcoder@gmail.com");
+    navigator.clipboard.writeText("heytejus@gmail.com");
     setCopied(true);
 
     setTimeout(() => {
@@ -161,7 +161,7 @@ const Contact = () => {
                 className="font-medium flex items-center gap-x-2 cursor-pointer hover:underline transition"
                 onClick={onCopy}
               >
-                thequantumcoder&#64;gmail.com
+                heytejus&#64;gmail.com
                 <span>
                   {copied ? (
                     <Check className="h-4 w-4" />

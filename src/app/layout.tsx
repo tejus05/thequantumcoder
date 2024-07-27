@@ -6,8 +6,8 @@ import ToastProvider from "@/providers/ToastProviders";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "thequantumcoder",
-  description: "Portfolio website of Tejus S, a full-stack developer, built using Next.js. ",
+  title: "Tejus S",
+  description: "Portfolio website of Tejus S (a full-stack developer) built using Next.js. ",
 };
 
 export default function RootLayout({

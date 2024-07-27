@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           smooth
           duration={500}
         >
-          thequantumcoder
+          Tejus S
         </Link>
         <div className="flex-1" />
         <nav className="hidden justify-between items-center md:flex space-x-10">
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
           </SheetTrigger>
           <SheetContent side="top" className="flex flex-col gap-4 p-4">
             <Link to="/" className="text-xl  font-bold">
-              thequantumcoder
+              Tejus S
             </Link>
             <NavLink onClick={()=>setIsOpen(false)} href="home">Home</NavLink>
             <NavLink onClick={()=>setIsOpen(false)} href="about">About</NavLink>
