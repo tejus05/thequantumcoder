@@ -18,7 +18,7 @@ const Contact = () => {
 
   const [copied, setCopied] = useState(false);
   const onCopy = () => {
-    navigator.clipboard.writeText("heytejus@gmail.com");
+    navigator.clipboard.writeText("tejus05.work@gmail.com");
     setCopied(true);
 
     setTimeout(() => {
@@ -63,14 +63,10 @@ const Contact = () => {
       id="contact"
     >
       <div className="flex flex-col gap-5 py-20 lg:text-left text-center lg:pr-10">
-        <h1
-          className="lg:text-5xl md:text-4xl text-3xl font-semibold lg:text-left text-center"
-        >
+        <h1 className="lg:text-5xl md:text-4xl text-3xl font-semibold lg:text-left text-center">
           Get In Touch
         </h1>
-        <p
-          className="lg:text-2xl md:text-xl text-lg text-muted-foreground font-normal mt-0 xl:mt-4 lg:text-left text-center"
-        >
+        <p className="lg:text-2xl md:text-xl text-lg text-muted-foreground font-normal mt-0 xl:mt-4 lg:text-left text-center">
           Leave your message here and we&apos;ll get back to you shortly
         </p>
       </div>
@@ -161,7 +157,7 @@ const Contact = () => {
                 className="font-medium flex items-center gap-x-2 cursor-pointer hover:underline transition"
                 onClick={onCopy}
               >
-                heytejus&#64;gmail.com
+                tejus05.work&#64;gmail.com
                 <span>
                   {copied ? (
                     <Check className="h-4 w-4" />

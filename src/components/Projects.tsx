@@ -21,15 +21,6 @@ import DialogImage from './DialogImage';
 
 const projects = [
   {
-    title: "Quill",
-    description: "The SaaS App",
-    content:
-      "Quill is a powerful SaaS application that allows users to upload PDF documents, engage in real-time chat with PDFs and ask questions right away, and upgrade to a Pro plan for exclusive benefits.",
-    images: ["/quill1.jpg", "/quill2.jpg", "/quill3.jpg"],
-    live: "https://quill-saas-app.vercel.app/",
-    code: "https://github.com/tejus05/quill",
-  },
-  {
     title: "Discord Clone",
     description: "The Community App",
     content:
@@ -91,7 +82,7 @@ const Projects = () => {
                     <div className="relative">
                       <Image
                         src={project.images[0]}
-                        alt="Quill 1"
+                        alt="Image 1"
                         width={1365}
                         height={625}
                       />
@@ -105,7 +96,7 @@ const Projects = () => {
                     <div className="relative">
                       <Image
                         src={project.images[1]}
-                        alt="Quill 1"
+                        alt="Image 2"
                         width={1365}
                         height={625}
                       />
@@ -119,7 +110,7 @@ const Projects = () => {
                     <div className="relative">
                       <Image
                         src={project.images[2]}
-                        alt="Quill 1"
+                        alt="Image 3"
                         width={1365}
                         height={625}
                       />

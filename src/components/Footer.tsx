@@ -82,7 +82,7 @@ const Footer = () => {
             "text-white text-2xl"
           )}
           target="_blank"
-          href="https://www.linkedin.com/in/heytejus/"
+          href="https://www.linkedin.com/in/tejus05"
         >
           <Linkedin className="sm:h-8 sm:w-8 h-6 w-6" />
         </Link>
@@ -102,7 +102,7 @@ const Footer = () => {
             "text-white text-2xl"
           )}
           target="_blank"
-          href="mailto:heytejus@gmail.com"
+          href="mailto:tejus05.work@gmail.com"
         >
           <Mail className="sm:h-8 sm:w-8 h-6 w-6" />
         </Link>

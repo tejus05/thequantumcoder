@@ -27,18 +27,18 @@ const AboutMe: React.FC = () => {
             <div className="flex flex-col mt-4 text-black max-md:mt-10 max-md:max-w-full">
               <div className="md:text-xl lg:text-2xl text-lg text-center md:text-left leading-[35px] md:leading-[40px] lg:leading-[60px] lg:mt-5 sm:px-6 px-1 md:px-0">
                 I&apos;m <span className="font-medium">Tejus S</span>, a
-                20-year-old computer science student and full-stack developer
-                from India. I&apos;m passionate about crafting user-friendly web
-                apps, from concept all the way to deployment. I&apos;m
-                constantly learning and experimenting with new technologies to
-                stay ahead of the curve.
+                21-year-old year Computer Science student with a strong
+                foundation in scalable system design, backend architecture, and
+                full-stack development. Leading an AI SaaS project under HPE and
+                experienced in building production-grade web applications using
+                modern technologies.
               </div>
               <p className="mt-7 md:text-xl lg:text-2xl text-lg text-center md:text-left leading-[35px] md:leading-[40px] lg:leading-[60px] lg:mt-5 sm:px-6 px-1 md:px-0">
                 Do take a look at my {""}
                 <a
                   className="hover:underline transition cursor-pointer text-indigo-600"
                   target="_blank"
-                  href="https://drive.google.com/file/d/1zg8i6lKfRjX4VPC25aOR_4dVoeewNLrc/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1VPZh2_fPTW0br8L_IFG4K4PqIL1GvRAw/view?usp=sharing"
                 >
                   resume
                 </a>
