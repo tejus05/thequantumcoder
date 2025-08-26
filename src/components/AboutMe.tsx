@@ -26,47 +26,13 @@ const AboutMe: React.FC = () => {
           <div className="flex flex-col w-[76%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col mt-4 text-black max-md:mt-10 max-md:max-w-full">
               <div className="md:text-xl lg:text-2xl text-lg text-center md:text-left leading-[35px] md:leading-[40px] lg:leading-[60px] lg:mt-5 sm:px-6 px-1 md:px-0">
-                I&apos;m <span className="font-medium">Tejus S</span>, a
-                21-year-old year Computer Science student with a strong
-                foundation in scalable system design, backend architecture, and
-                full-stack development. Leading an AI SaaS project under HPE and
-                experienced in building production-grade web applications using
-                modern technologies.
+                I&apos;m <span className="font-medium">Tejus S</span>, a final-year Computer Science student with solid programming fundamentals and a drive to learn.
+                Experienced in full-stack development with a focus on creating user-friendly applications. Passionate
+                about turning problems into elegant code solutions.
               </div>
-              <p className="mt-7 md:text-xl lg:text-2xl text-lg text-center md:text-left leading-[35px] md:leading-[40px] lg:leading-[60px] lg:mt-5 sm:px-6 px-1 md:px-0">
-                Do take a look at my {""}
-                <a
-                  className="hover:underline transition cursor-pointer text-indigo-600"
-                  target="_blank"
-                  href="https://drive.google.com/file/d/1VPZh2_fPTW0br8L_IFG4K4PqIL1GvRAw/view?usp=sharing"
-                >
-                  resume
-                </a>
-                .
-              </p>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-wrap gap-10 mt-24 justify-center items-center">
-        <Image
-          src="frontend_tools.svg"
-          alt="Frontend Tools"
-          height={414}
-          width={418}
-        />
-        <Image
-          src="backend_tools.svg"
-          alt="Frontend Tools"
-          height={414}
-          width={418}
-        />
-        <Image
-          src="other_tools.svg"
-          alt="Frontend Tools"
-          height={414}
-          width={418}
-        />
       </div>
     </section>
   );
